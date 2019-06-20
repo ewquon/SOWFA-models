@@ -12,10 +12,10 @@ yMin                 0.0;                         // Minimum y-extent of domain 
 zMin                 0.0;                         // Minimum z-extent of domain (m).
 xMax                 3000.0;                      // Maximum x-extent of domain (m).
 yMax                 3000.0;                      // Maximum y-extent of domain (m).
-zMax                 1020.0;                      // Maximum z-extent of domain (m).
+zMax                 1000.0;                      // Maximum z-extent of domain (m).
 nx                   300;                         // Number of cells in x-direction.
 ny                   300;                         // Number of cells in y-direction.
-nz                   102;                         // Number of cells in z-direction.
+nz                   100;                         // Number of cells in z-direction.
 
 
 
@@ -23,7 +23,7 @@ nz                   102;                         // Number of cells in z-direct
 // Number of cores and domain decomposition information.
 nCores               216;                         // Number of cores on which to run this case.
 decompType           simple;                      // Decomposition algorithm.  "simple" and "scotch" are good choices.
-decompOrder          (6 6 6);                   // Order of the decomposition number of partitions in (x y z)-directions.
+decompOrder          (6 6 6);                     // Order of the decomposition number of partitions in (x y z)-directions.
 
 
 
