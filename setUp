@@ -39,7 +39,7 @@ statisticsFrequency  5;                           // Frequency in time steps of 
 // Note that U and T get overwritten if setFieldsABL is called.
 U0Mag                8.0;                         // Initial condition for wind speed (m/s).
 dir                  270.0;                       // Initial condition for wind direction (deg).
-windHeight           99.27;                       // Height at which to drive mean wind to U0Mag/dir (m).
+windHeight           80.0;                        // Height at which to drive mean wind to U0Mag/dir (m).
 p_rgh0               0.0;                         // Initial pressure (minus the hydrostatic variation and normalized by density) (m^2/s^2).
 nuSgs0               0.0;                         // Initial SGS viscosity (m^2/s).
 k0                   0.1;                         // Initial SGS turbulent kinetic energy (m^2/s^2).
