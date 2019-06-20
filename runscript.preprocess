@@ -1,6 +1,8 @@
 #!/bin/bash
 #SBATCH --ntasks=1                  # Request 1 CPU core
 #SBATCH --time=04:00:00             # Job should run for up to 4 hours
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=your.email@nrel.gov
 #SBATCH --job-name='preprocessing'
 
 

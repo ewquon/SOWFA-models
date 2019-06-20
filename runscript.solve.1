@@ -2,6 +2,8 @@
 #SBATCH --nodes=6
 #SBATCH --ntasks-per-node=36
 #SBATCH --time=48:00:00
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=your.email@nrel.gov
 #SBATCH --job-name='ABLSolver_neutral'
 
 
