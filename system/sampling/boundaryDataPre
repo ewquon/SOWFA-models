@@ -15,10 +15,10 @@
           );
           surfaces
           (
-              south
+              west
               {
                   type         patch;
-                  patches      (south);
+                  patches      (west);
                   triangulate  false;
               }
           );
