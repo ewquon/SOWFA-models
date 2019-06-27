@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --nodes=6
 #SBATCH --ntasks-per-node=36
-#SBATCH --time=48:00:00
+#SBATCH --time=12:00:00
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=your.email@nrel.gov
 #SBATCH --job-name='ABLSolver_neutral'
@@ -13,8 +13,8 @@ module list
 
 initializer=setFieldsABL
 solver=ABLSolver
-runNumber=1
-startTime=0
+runNumber=3
+startTime=20000
 
 cp system/controlDict.$runNumber system/controlDict
 
