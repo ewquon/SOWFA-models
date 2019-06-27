@@ -37,7 +37,8 @@ boundaryField
 
         geometry
         {
-            Wasco.fine.stl
+            // in constant/triSurface:
+            terrain.stl
             {
                 type triSurfaceMesh;
             }
