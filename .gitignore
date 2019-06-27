@@ -11,5 +11,13 @@ constant/polyMesh/neighbour*
 constant/polyMesh/owner*
 constant/polyMesh/pointZones*
 constant/polyMesh/points*
+constant/triSurface
 processor*/
 postProcessing/*
+
+# symlinks
+constant/boundaryData
+constant/sources
+
+# misc files
+*.foam
