@@ -23,7 +23,7 @@ FoamFile
 
   stopAt            endTime;
 
-  endTime           20;
+  endTime           15;
 
   deltaT            0.5;
 
