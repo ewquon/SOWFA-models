@@ -58,6 +58,8 @@ OpenFOAM-$OpenFOAMversion
 
 
 cp system/controlDict.meshMotion system/controlDict
+cp system/fvSchemes.meshMotion system/fvSchemes
+cp system/fvSolution.meshMotion system/fvSolution
 
 
 # Grab to original setup to use as reference
@@ -94,7 +96,7 @@ transformPoints -translate '(0.0 0.0 494.0)' > log.transformPoints.translate 2>&
 
 # Update boundary patch type from 'cyclic' to 'patch'
 changeDictionary -dict system/changeDictionaryDict.setTypePatch \
-    -time 0 -enableFunctionEntries > log.changeDictionary.updateBCs.$inflowDir.meshMotion 2>&1
+    -time 0 -enableFunctionEntries > log.changeDictionary.updateBCs.${inflowDir}.meshMotion 2>&1
 
 
 # Do serial local refinement
@@ -106,9 +108,6 @@ decomposePar -time 0 -cellDist -force > log.decomposePar 2>&1
 
 
 # Now deform the mesh so that it conforms to the terrain
-cp system/fvSchemes.meshMotion system/fvSchemes
-cp system/fvSolution.meshMotion system/fvSolution
-
 srun moveDynamicMesh -parallel > log.moveDynamicMesh
 
 
@@ -132,7 +131,7 @@ decomposePar -time $startTime -fields > log.decomposePar 2>&1
 # north sides inflow and outflow.
 if [ $updateBCType -eq 1 ]; then
     srun changeDictionary -dict system/changeDictionaryDict.updateBCs.$inflowDir \
-        -time $startTime -enableFunctionEntries -parallel > log.changeDictionary.updateBCs.$inflowDir.$runNumber 2>&1
+        -time $startTime -enableFunctionEntries -parallel > log.changeDictionary.updateBCs.${inflowDir}.${runNumber} 2>&1
 fi
 
 
