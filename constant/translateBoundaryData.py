@@ -1,22 +1,26 @@
 #!/usr/bin/env python
-import os
+import sys,os
 import numpy as np
 
 # depends on https://github.com/NWTC/datatools
 import datatools.SOWFA.constant.boundaryData as bd
 
-patchName = 'west'
-x0 = -6000.
+
+if len(sys.argv) <= 2:
+    sys.exit('Need to specify inlet patch name and vertical offset')
+patchName = sys.argv[1]
+zOffset = float(sys.argv[2])
 
 # get 1-D arrays
-y1,z1 = bd.read_points(os.path.join('boundaryData',patchName,'points.original'))
+x0,y1,z1 = bd.read_points(os.path.join('boundaryData',patchName,'points.original'),
+                          return_const=True)
 
 # generate patch
 y,z = np.meshgrid(y1, z1, indexing='ij')
 x = x0*np.ones(y.shape)
 
 # transformation(s)
-z += 406.
+z += zOffset
 
 # write out new points file
 bd.write_points(os.path.join('boundaryData',patchName,'points'),

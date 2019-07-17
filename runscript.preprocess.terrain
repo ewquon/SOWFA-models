@@ -26,10 +26,6 @@ inletElevation=406.0            # Height of lower edge of inlet patch--this shou
                                 #   provided that the inlet terrain has been smoothed and flattened.
                                 #   This is the distance the precursor domain will be translated in
                                 #   the +z direction.
-                                #   TODO: Verify that this matches the translation in
-                                #     constant/translateBoundaryData.py
-                                #   and that `patchName` and `x0` parameters (e.g., the constant
-                                #   coordinate x0 on the patchName='west' patch) are correct.
 meshMotionTime=10               # Should match what's in system/controlDict.meshMotion
 updateBCType=1                  # Boolean for whether or not the boundary condition types will be
                                 #   updated over what is in the initial conditions files.
@@ -106,7 +102,7 @@ if [ `echo "$inletElevation != 0" | bc -l` -ne 0 ]; then
     # Shift the boundary data to coincide with the our new transformed mesh
     cd constant
     cp boundaryData/$inflowDir/points boundaryData/$inflowDir/points.original
-    python translateBoundaryData.py
+    python translateBoundaryData.py $inflowDir $inletElevation
     cd ..
 fi
 
