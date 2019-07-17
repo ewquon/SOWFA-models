@@ -27,8 +27,16 @@ FoamFile
 
 
 // Properties of the mesoscale source terms
-momentumSourceType       "computed";
-temperatureSourceType    "given";
+//momentumSourceType       "computed";
+//temperatureSourceType    "given";
+
+// ABLTerrainSolver parameters (to be deprecated with the unified solver)
+driveWindOn false; // use precursor gradP instead
+// rest of these values needed to avoid error but not used
+UWindSpeed  U0 [0 1 -1 0 0 0 0] $U0Mag;
+UWindDir    $dir;
+hWind       hWind [ 0 1 0 0 0 0 0] 574.0; //$windHeight;
+hWindWidth  hWindWidth [ 0 1 0 0 0 0 0] 10.0; 
 
 velocityInputType        "speedAndDirection";
 

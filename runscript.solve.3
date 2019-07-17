@@ -12,14 +12,13 @@ OpenFOAM-2.4.x-central
 module list
 
 initializer=setFieldsABL
-solver=ABLSolver
+solver=ABLTerrainSolver
 runNumber=3
 startTime=20000
 
 cp system/controlDict.$runNumber system/controlDict
 
 echo "Starting OpenFOAM job at: `date`"
-echo "using " $cores " cores"
 
 # Run the flow field initializer (parallel)
 if [ $runNumber -eq 1 ]; then
