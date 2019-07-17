@@ -69,20 +69,26 @@ boundaryField
 
     west
     {
-        type            fixedNormalSlip;
-        n               (-1 0 0);
+//        type            fixedNormalSlip;
+//        n               (-1 0 0);
+        type            fixedValue;
+        value           uniform (0 0 0);
     }
 
     south
     {
-        type            fixedNormalSlip;
-        n               (0 -1 0);
+//        type            fixedNormalSlip;
+//        n               (0 -1 0);
+        type            fixedValue;
+        value           uniform (0 0 0);
     }
 
     north
     {
-        type            fixedNormalSlip;
-        n               (0 1 0);
+//        type            fixedNormalSlip;
+//        n               (0 1 0);
+        type            fixedValue;
+        value           uniform (0 0 0);
     }
 }
 
