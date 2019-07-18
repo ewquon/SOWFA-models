@@ -151,6 +151,10 @@ rm -rf $startTime
 cp -rf $precursorPath/$startTime $startTime
 
 
+# Setup driving pressure gradient (for ABLTerrainSolver)
+constant/estimateGradP.py $precursorPath $startTime
+
+
 # The initial fields come from the precursor (at $startTime), which is periodic on all sides.
 # The turbine case has inflow and outflow.  Call the changeDictionary utility to make the south and
 # north sides inflow and outflow.
