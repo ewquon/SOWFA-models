@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import sys,os
 import numpy as np
-
 # depends on https://github.com/NWTC/datatools
 import datatools.SOWFA.constant.boundaryData as bd
 
