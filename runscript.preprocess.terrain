@@ -11,6 +11,8 @@
 
 # User Input.
 
+# TODO: provide constant/triSurface/terrain.stl
+
 # For this case, a flat-terrain precursor was previously run. This path will be used as follows:
 # - retrieve the original mesh
 # - symlink constant/boundaryData
@@ -101,7 +103,9 @@ if [ `echo "$inletElevation != 0" | bc -l` -ne 0 ]; then
 
     # Shift the boundary data to coincide with the our new transformed mesh
     cd constant
-    cp boundaryData/$inflowDir/points boundaryData/$inflowDir/points.original
+    if [ ! -f "boundaryData/$inflowDir/points.original" ]; then
+        cp boundaryData/$inflowDir/points boundaryData/$inflowDir/points.original
+    fi
     python translateBoundaryData.py $inflowDir $inletElevation
     cd ..
 fi
