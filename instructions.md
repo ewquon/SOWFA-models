@@ -24,13 +24,14 @@ Instructions:
    terrain-resolving mesh. It is up to the user to smooth, blend, and flatten
    the ground surface (within terrain.stl) such that the resulting mesh meets
    these requirements.
-3. Set parameters within `runscript.preprocess.terrain`. Important parameters:
-   - `$inletElevation` in `runscript.preprocess.terrain` to be the elevation
-     of the lower edge of the inlet patch. Since the terrian has been flattened
-     near the inlet, this elevation will be constant (and no boundary data
-     manipulation is necessary to guarantee one-to-one face mappings between
-     the generated boundaryData and the inlet mesh).
-   - `$meshMotionTime` dictates the maximum displacement of any point of the
+3. Set parameters within `runscript.preprocess.terrain`. Important parameters
+   (that are not present in `runscript.preprocess` for flat terrain):
+   - `$inletElevation`: the elevation of the lower edge of the inlet patch.
+     Since the terrian has been flattened near the inlet, this elevation will
+     be constant (and no boundary data manipulation is necessary to guarantee
+     one-to-one face mappings between the generated boundaryData and the inlet
+     mesh).
+   - `$meshMotionTime`: dictates the maximum displacement of any point of the
      mesh. Since the velocity in `0.original.meshMotion/pointDisplacement` is
      10 by default, the mesh motion time should be greater than the maximum
      difference in surface elevation, relative to $inletElevation, divided by
